@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/dealerScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score Croupier: 0"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/dealerCard1"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_back" />
+
+    <ImageView
+        android:id="@+id/dealerCard2"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_back" />
+
+    <TextView
+        android:id="@+id/playerScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score Joueur: 0"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/playerCard1"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_front" />
+
+    <ImageView
+        android:id="@+id/playerCard2"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_front" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/hitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tirer" />
+
+    <Button
+        android:id="@+id/standButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rester" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommencer" />
+</LinearLayout>

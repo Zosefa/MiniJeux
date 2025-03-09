@@ -26,6 +26,7 @@ public class Acceuil extends AppCompatActivity  {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // 2 colonnes
 
         gameList = new ArrayList<>();
+        gameList.add(new Game("BLACK JACK", R.drawable.lucky_card));
         gameList.add(new Game("STAIRS", R.drawable.lucky_card));
         gameList.add(new Game("LUCKY CARDS", R.drawable.lucky_card));
         gameList.add(new Game("MINES", R.drawable.lucky_card));
@@ -37,7 +38,7 @@ public class Acceuil extends AppCompatActivity  {
         gameList.add(new Game("DICE", R.drawable.lucky_card));
         gameList.add(new Game("COMING SOON", R.drawable.lucky_card));
 
-        gameAdapter = new GameAdapter(gameList);
+        gameAdapter = new GameAdapter(this, gameList);
         recyclerView.setAdapter(gameAdapter);
     }
 }
