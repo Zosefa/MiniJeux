@@ -1,10 +1,13 @@
 package com.example.minijeux;
 
 import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.minijeux.database.JetonDb;
 import com.example.minijeux.model.Game;
 import com.example.minijeux.model.GameAdapter;
 
@@ -17,13 +20,23 @@ public class Acceuil extends AppCompatActivity  {
     private GameAdapter gameAdapter;
     private List<Game> gameList;
 
+    private JetonDb jetonDB;  // Ajout de la référence à la base de données
+    private TextView jetonsTextView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
         recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // 2 colonnes
+        jetonsTextView = findViewById(R.id.jetonsTextView);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+
+        jetonDB = new JetonDb(this);  // Initialiser la base de données
+
+        // Récupérer et afficher les jetons
+        int jetons = jetonDB.getJetons();
+        jetonsTextView.setText("Jetons: " + jetons);
 
         gameList = new ArrayList<>();
         gameList.add(new Game("BLACK JACK", R.drawable.lucky_card));
